@@ -1,0 +1,41 @@
+# Habilitar reescritura de URLs
+RewriteEngine On
+
+# Si no se especifica archivo, cargar index.php
+DirectoryIndex index.php
+
+# Prevenir bucles infinitos y errores 500
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^\.]+)$ $1.php [L]
+
+# Proteger el archivo de configuración de BD
+<Files "config/database.php">
+    <IfModule mod_authz_core.c>
+        Require all denied
+    </IfModule>
+    <IfModule !mod_authz_core.c>
+        Order allow,deny
+        Deny from all
+    </IfModule>
+</Files>
+
+# Prevenir acceso a archivos sensibles
+<FilesMatch "\.(htaccess|htpasswd|ini|log|sh|sql)$">
+    Order Allow,Deny
+    Deny from all
+</FilesMatch>
+
+# Configuración de PHP (si es permitido)
+<IfModule mod_php7.c>
+    php_flag display_errors off
+    php_value error_reporting 0
+</IfModule>
+
+# Headers de seguridad
+<IfModule mod_headers.c>
+    Header set X-Content-Type-Options "nosniff"
+    Header set X-Frame-Options "SAMEORIGIN"
+    Header set X-XSS-Protection "1; mode=block"
+</IfModule>

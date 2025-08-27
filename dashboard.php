@@ -2499,7 +2499,7 @@ if ($is_admin) {
                 </div>
             </div>
 
-            <!-- REEMPLAZAR toda la sección <!-- Automations View --> por esta versión corregida -->
+            <!-- REEMPLAZAR toda la sección <!-- Automations View por esta versión corregida -->
 
 <!-- Automations View -->
 <div id="automations-view" style="display: none;">
@@ -2737,6 +2737,10 @@ if ($is_admin) {
                                    <?php echo $automation['is_active'] ? 'checked' : ''; ?>>
                             <span class="slider"></span>
                         </label>
+                         <a href="prompts_lista.php?automation_id=<?php echo $automation['id']; ?>" 
+                   class="btn btn-outline-info btn-sm mt-2">
+                    <i class="fas fa-file-alt"></i> Prompts
+                </a>
                     </div>
                 </div>
             </div>

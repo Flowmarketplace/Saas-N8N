@@ -28,7 +28,7 @@ class Database {
 
 // Configuración de la API N8N
 define('N8N_API_URL', 'https://n8n-n8n.sax8vb.easypanel.host/api/v1/workflows');
-define('N8N_API_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1MmQzNWUxNS0wOTA1LTQ5YTktYjdjNS0wMGRhZmNhZmUzMDMiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzUyMDgxMTIxLCJleHAiOjE3NTQ2MjU2MDB9.PfGL27rKNNs_3Q9l_KRIy0XUZk-JEQGw2mH_EMCfsfI');
+define('N8N_API_KEY', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI1MmQzNWUxNS0wOTA1LTQ5YTktYjdjNS0wMGRhZmNhZmUzMDMiLCJpc3MiOiJuOG4iLCJhdWQiOiJwdWJsaWMtYXBpIiwiaWF0IjoxNzU2MjMyMjcwfQ.0Q512iQUeVXo-7OrabMd9JBVYiS7EvI9mXKgaPyq4DA');
 
 // Iniciar sesión
 session_start();
